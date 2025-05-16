@@ -1,0 +1,50 @@
+{
+  "name": "@owdproject/nx",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "nx": {
+    "outputPath": "./dist",
+    "main": "./src/index.ts",
+    "tsConfig": "./tsconfig.lib.json",
+    "rootDir": "./src",
+    "assets": [
+      {
+        "input": "./src",
+        "glob": "**/!(*.ts)",
+        "output": "."
+      },
+      {
+        "input": "./src",
+        "glob": "**/*.d.ts",
+        "output": "."
+      },
+      {
+        "input": "./src",
+        "glob": "**/*.json",
+        "output": "."
+      }
+    ]
+  },
+  "dependencies": {
+    "@nx/devkit": "21.0.3",
+    "tslib": "^2.3.0",
+    "ts-morph": "^25.0.1"
+  },
+  "executors": "./executors.json",
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo",
+    "executors.json"
+  ]
+}
