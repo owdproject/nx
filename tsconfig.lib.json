@@ -1,15 +1,18 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "rootDir": "src",
     "outDir": "dist",
-    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "declaration": true,
+    "declarationMap": true,
     "emitDeclarationOnly": false,
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "target": "ES2022",
+    "strict": true,
+    "skipLibCheck": true,
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],
-  "references": []
+  "exclude": ["src/**/*.spec.ts"]
 }
